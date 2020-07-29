@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.stats import linregress
+import scipy.stats as stats
 
 def regressionLine(x,y, text_place_x, text_place_y):
 
@@ -45,3 +46,14 @@ def boxDraw(groupByField, num_of_bins, dataFrame):
     ax1.set_title(f'{groupByField} vs COVID Mortality')
     ax1.set_ylabel('COVID Mortality Ratio-(Positive Cases / Deaths)')
     ax1.set_xlabel(f'{groupByField}ed State Groups from Best to Worst')
+
+def runAnova(df,bin_column,anova_set):
+    # Extract individual groups
+    group1 = df[df[bin_column] == 1][anova_set]
+    group2 = df[df[bin_column] == 2][anova_set]
+    group3 = df[df[bin_column] == 3][anova_set]
+    group4 = df[df[bin_column] == 4][anova_set]
+    group5 = df[df[bin_column] == 5][anova_set]
+    
+# Perform the ANOVA
+    return stats.f_oneway(group1, group2, group3, group4, group5)
