@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
 from scipy.stats import linregress
 
 def regressionLine(x,y, text_place_x, text_place_y):
@@ -11,10 +12,10 @@ def regressionLine(x,y, text_place_x, text_place_y):
     plt.text(text_place_x, text_place_y, f'y = {round(slope,3)}x + {round(intercept,3)}', color = 'red', fontsize = 12)
     plt.legend()
 
-def scatterDraw(xValue, frame, color):
+def scatterDraw(xValue, yValue, frame, color):
     plt.figure(figsize=(14, 6))
     plt.scatter(frame[xValue], 
-            master_df["Mortality Rate"], 
+            frame[yValue], 
             color=color)
     plt.xlabel(xValue)
     plt.ylabel('COVID Mortality Ratio-(Positive Cases / Deaths)')
