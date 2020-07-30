@@ -13,11 +13,12 @@ def regressionLine(x,y, text_place_x, text_place_y):
     plt.text(text_place_x, text_place_y, f'y = {round(slope,3)}x + {round(intercept,3)}', color = 'red', fontsize = 12)
     plt.legend()
 
-def scatterDraw(xValue, yValue, frame, color):
+def scatterDraw(xValue, yValue, frame, color, title):
     plt.figure(figsize=(14, 6))
     plt.scatter(frame[xValue], 
             frame[yValue], 
             color=color)
+    plt.title(title)
     plt.xlabel(xValue)
     plt.ylabel('COVID Mortality Ratio-(Positive Cases / Deaths)')
 
