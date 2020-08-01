@@ -19,7 +19,7 @@ def scatterDraw(xValue, yValue, frame, color, title):
             frame[yValue], 
             color=color)
     plt.title(title)
-    plt.xlabel(xValue)
+    plt.xlabel(f'{xValue}erse (Least Happy to Happiest)')
     plt.ylabel('COVID Mortality Ratio-(Positive Cases / Deaths)')
 
 def stateGrouper(groupByField, num_of_bins, dataFrame):
@@ -29,9 +29,8 @@ def stateGrouper(groupByField, num_of_bins, dataFrame):
     return dataFrame
 
 def boxDraw(groupByField, num_of_bins, dataFrame):
-    fig1, ax1 = plt.subplots()
+    fig1, ax1 = plt.subplots(figsize=(10, 5))
     ticks = [*range(1,num_of_bins+1)]
-
     collection = []
     labels = ticks
     for box in set(dataFrame[f'{groupByField}_bin']):
@@ -46,7 +45,7 @@ def boxDraw(groupByField, num_of_bins, dataFrame):
 
     ax1.set_title(f'{groupByField} vs COVID Mortality')
     ax1.set_ylabel('COVID Mortality Ratio-(Positive Cases / Deaths)')
-    ax1.set_xlabel(f'{groupByField}ed State Groups from Best to Worst')
+    ax1.set_xlabel(f'{groupByField}ed State Groups (Happiest to Least Happy)')
 
 def runAnova(df,bin_column,anova_set):
     # Extract individual groups
