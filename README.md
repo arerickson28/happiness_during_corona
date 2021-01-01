@@ -8,7 +8,7 @@
 *  Gabriel Figueroa
 
 
-## Project Description outline:
+## Project Description:
 
 With the COVID 19 pandemic surging in the US, we will attempt to quantify a correlation between a population’s measured sate of happiness and its resilience in managing COVID 19.   Using happiness data from 2020 that uses a weighted score of several criteria per state, we will overlay the mortality rate of COVID infections to test whether any or all of the criteria of measured happiness has a material impact on a population’s ability to recover and reduce the comorbidity associated with COVID.
 
@@ -29,7 +29,32 @@ With the COVID 19 pandemic surging in the US, we will attempt to quantify a corr
 *	Current State Infection and mortality of COVID-19—Published by Johns Hopkins University
 			https://documenter.getpostman.com/view/10808728/SzS8rjbc?version=latest
 
+---
+## In This Repository
+* CovidAPI.ipynb -- Jupyter Notebook for the purpose of gathering data
+	* Defines URLS for API calls
+	* Executes API calls
+	* Builds dataframe
+	* Exports dataframe to CSV file
 
+* functions.py -- Python file holding useful functions for data analysis
+	* regressionLine - to draw regression lines on the scatter plots  
+	* scatterDraw - to draw scatter plots from various data  
+	* stateGrouper - to bin a varibale field, variable dataframe and number of bins  
+	* boxDraw - to draw the box plots of various data  
+
+* FullDataset.ipynb -- Jupyter Notebook for the purpose of combining data from API calls with the state happiness rankings dataset (stateHappinessData.csv)
+	* Merges state abbreviations (state_abbreviations.csv) with API data to enable secondary merge
+	* Merge state happiness rankings dataset
+	* Rename columns and drop columns
+	* Export dataframe (MasterData200725.csv)
+	* Add additional columns to dataframe to ensure happiness increases along x-axis
+	* Export dataframe (MasterData200730.csv)
+
+
+
+
+---
 ## Rough Breakdown of Tasks:
 
 * Build Dataframe (extract, transform/clean, load)
