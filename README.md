@@ -16,7 +16,7 @@ With the COVID 19 pandemic surging in the US, we will attempt to quantify a corr
 ## Research Questions to Answer:
 
 *  Is the total measured happiness by state negatively correlated to the mortality rate of COVID-19?
-*  Do the individual measures happiness by state contribute more strongly to a negative correlation of the mortality rate?
+*  Do the individual measures of happiness by state contribute more strongly to a negative correlation of the mortality rate?
 	*  Emotional & Physical well being
 	*  Work Environment
 	*  Community & Environment
@@ -42,6 +42,7 @@ With the COVID 19 pandemic surging in the US, we will attempt to quantify a corr
 	* scatterDraw - to draw scatter plots from various data  
 	* stateGrouper - to bin a varibale field, variable dataframe and number of bins  
 	* boxDraw - to draw the box plots of various data  
+	* runAnova - to perform statistical test
 
 * FullDataset.ipynb -- Jupyter Notebook for the purpose of combining data from API calls with the state happiness rankings dataset (stateHappinessData.csv)
 	* Merges state abbreviations (state_abbreviations.csv) with API data to enable secondary merge
@@ -51,17 +52,16 @@ With the COVID 19 pandemic surging in the US, we will attempt to quantify a corr
 	* Add additional columns to dataframe to ensure happiness increases along x-axis
 	* Export dataframe (MasterData200730.csv)
 
+* Main.ipynb -- Jupyter Notebook for the purpose of analysis
+	* Read final csv into dataframe
+	* Scatterplot and Regression
+	* Bin data with grouping function
+	* Boxplot Visualization
+	* Statistical Analysis
 
+* StatePopulationData.ipynb -- Jupyter Notebook for the purpose of exploring data limitations
+	*  In this project, we use the Case Fatality Rate. We wanted to look at the relationships using the Crude Mortality Rate. In an ideal world, we would use the Infection Fatality Rate
 
-
----
-## Rough Breakdown of Tasks:
-
-* Build Dataframe (extract, transform/clean, load)
-* Analysis of data in data frame
-* Four comparison charts (total and three bullets above) 
-* Regression analysis
-* Conclusions from data analysis
 
 ----
 
@@ -103,7 +103,7 @@ With p-values greater than 0.05, there is insufficient evidence to warrant rejec
 	Performed some other small tasks to improve the overall project including creating inverse columns in the master dataframe
 
 Rhyce's Contributions:  
-	With guidance, merged happiness and coronavirus datasets into our project's main dataset.
+	Merged happiness and coronavirus datasets into our project's main dataset.
 	Evaluated covid mortality as a function of community happiness and made scatter plot with regression line
 	Drew conclusions on the project's finding from ANOVA test results
 	Presented on statistical testing and conclusions and commented on dataset limitations
